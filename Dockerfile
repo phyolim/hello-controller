@@ -1,9 +1,9 @@
 FROM openjdk:11-jdk as build
-COPY McKessonEnterpriseRootCA1.crt $JAVA_HOME/lib/security
+COPY galvanizeEnterpriseRootCA1.crt $JAVA_HOME/lib/security
 RUN ls
 RUN \
     cd $JAVA_HOME/lib/security \
-    && keytool -keystore cacerts -storepass changeit -noprompt -trustcacerts -importcert -alias ldapcert -file McKessonEnterpriseRootCA1.crt
+    && keytool -keystore cacerts -storepass changeit -noprompt -trustcacerts -importcert -alias ldapcert -file galvanizeEnterpriseRootCA1.crt
 VOLUME /tmp
 COPY . .
 RUN ./gradlew clean build

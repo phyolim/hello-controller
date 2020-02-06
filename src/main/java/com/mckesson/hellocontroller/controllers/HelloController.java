@@ -1,4 +1,4 @@
-package com.mckesson.hellocontroller.controllers;
+package com.galvanize.hellocontroller.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
